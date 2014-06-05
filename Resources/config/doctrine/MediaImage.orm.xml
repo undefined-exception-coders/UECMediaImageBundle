@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping"
+                  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                  xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+
+    <mapped-superclass name="UEC\MediaImageBundle\Entity\MediaImage">
+
+        <field name="width" column="width" type="integer" nullable="false" />
+
+        <field name="height" column="height" type="integer" nullable="false" />
+
+        <field name="size" column="size" type="integer" nullable="false" />
+
+        <field name="mime" column="mime" type="string" nullable="true" />
+
+        <field name="exif" column="exif" type="array" nullable="true" />
+
+    </mapped-superclass>
+
+</doctrine-mapping>
