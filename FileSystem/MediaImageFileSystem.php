@@ -28,7 +28,9 @@ class MediaImageFileSystem implements FileSystemInterface
             $imageInfo->setSize($fileInfo->getSize());
             $imageInfo->setMime($fileInfo->getType());
 
-            if (false === $exif = exif_read_data($filePath)) {
+            $exif = @exif_read_data($filePath, 0, true);
+
+            if (empty($exif)) {
                 $exif = array();
             }
 
