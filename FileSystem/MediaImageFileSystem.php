@@ -34,6 +34,10 @@ class MediaImageFileSystem implements FileSystemInterface
                 $exif = array();
             }
 
+            array_walk_recursive($exif, function (&$value) {
+                $value = preg_replace('/[^(\x20-\x7f)]*/s', '', $value);
+            });
+
             $imageInfo->setExif($exif);
 
             return $imageInfo;
